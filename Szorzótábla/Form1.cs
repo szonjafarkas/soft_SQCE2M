@@ -19,7 +19,7 @@ namespace Szorzótábla
                     b.Width = 40;
                     b.Height = 40;
                     b.Left = oszlop * 40;
-                    b.Top = sor + 40;
+                    b.Top = sor * 40;
                     b.Text =((sor + 1) * (oszlop+1)).ToString();
                     Controls.Add(b);
                 }
