@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Szorzótábla", "Szorzótá
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pascal", "Pascal\Pascal.csproj", "{78836506-9C54-46C2-9633-5D65801A9B57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kobolgomb", "Kobolgomb\Kobolgomb.csproj", "{CE3F96D6-2A3C-4103-8BEE-75DF5C05A4C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kobolgomb", "Kobolgomb\Kobolgomb.csproj", "{CE3F96D6-2A3C-4103-8BEE-75DF5C05A4C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hajó", "Hajó\Hajó.csproj", "{9C233235-B417-4F76-B725-1A5601F3E283}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{CE3F96D6-2A3C-4103-8BEE-75DF5C05A4C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE3F96D6-2A3C-4103-8BEE-75DF5C05A4C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE3F96D6-2A3C-4103-8BEE-75DF5C05A4C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C233235-B417-4F76-B725-1A5601F3E283}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C233235-B417-4F76-B725-1A5601F3E283}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C233235-B417-4F76-B725-1A5601F3E283}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C233235-B417-4F76-B725-1A5601F3E283}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
