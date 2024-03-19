@@ -68,7 +68,7 @@ namespace Hajó
                     k.KérdésSzöveg = tömb[1];
                     k.Válasz1 = tömb[2];
                     k.Válasz2 = tömb[3];
-                    k.Válasz1 = tömb[4];
+                    k.Válasz3 = tömb[4];
                     k.URL = tömb[5];
 
                     int x = 0;
