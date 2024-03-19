@@ -4,7 +4,7 @@ namespace Hajó
     {
         List<Kérdés> ÖsszesKérdés;
         List<Kérdés> AktuálisKérdések;
-        int AktuálisKérdés = 5;
+        int AktuálisKérdés = 1;
         VálaszGomb VálaszGomb1;
         VálaszGomb VálaszGomb2;
         VálaszGomb VálaszGomb3;
@@ -82,6 +82,30 @@ namespace Hajó
 
 
 
+            }
+        }
+
+        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AktuálisKérdés++;
+            if (AktuálisKérdés == 7) AktuálisKérdés = 0;
+            KérdésMegjelenítés(AktuálisKérdések[AktuálisKérdés]);
+            void KérdésMegjelenítés(Kérdés kérdés)
+            {
+                label1.Text = kérdés.KérdésSzöveg;
+                VálaszGomb1.Text = kérdés.Válasz1;
+                VálaszGomb2.Text = kérdés.Válasz2;
+                VálaszGomb3.Text = kérdés.Válasz3;
+                if (!string.IsNullOrEmpty(kérdés.URL))
+                {
+                    pictureBox1.Load("https://storage.altinum.hu/hajo/" + kérdés.URL);
+                    pictureBox1.Visible = true;
+                }
+                else
+                {
+                    pictureBox1.Visible = false;
+                }
             }
         }
     }
