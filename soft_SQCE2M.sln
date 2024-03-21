@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pascal", "Pascal\Pascal.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kobolgomb", "Kobolgomb\Kobolgomb.csproj", "{CE3F96D6-2A3C-4103-8BEE-75DF5C05A4C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hajó", "Hajó\Hajó.csproj", "{9C233235-B417-4F76-B725-1A5601F3E283}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hajó", "Hajó\Hajó.csproj", "{9C233235-B417-4F76-B725-1A5601F3E283}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kígyó", "Kígyó\Kígyó.csproj", "{23E2225D-E3B2-4D36-AED1-40E1085E9381}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{9C233235-B417-4F76-B725-1A5601F3E283}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C233235-B417-4F76-B725-1A5601F3E283}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C233235-B417-4F76-B725-1A5601F3E283}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23E2225D-E3B2-4D36-AED1-40E1085E9381}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23E2225D-E3B2-4D36-AED1-40E1085E9381}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23E2225D-E3B2-4D36-AED1-40E1085E9381}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23E2225D-E3B2-4D36-AED1-40E1085E9381}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
