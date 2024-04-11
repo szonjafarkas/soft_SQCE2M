@@ -31,10 +31,6 @@ namespace Kígyó
             //Fejnövesztés
             fej_x += irány_x * KígyóElem.Méret;
             fej_y += irány_y * KígyóElem.Méret;
-            
-            KígyóElem ke = new KígyóElem();
-            ke.Top = fej_y;
-            ke.Left = fej_x;
             foreach (object item in Controls)
             {
                 if (item is KígyóElem)
@@ -47,6 +43,9 @@ namespace Kígyó
                     }
                 }
             }
+            KígyóElem ke = new KígyóElem();
+            ke.Top = fej_y;
+            ke.Left = fej_x;
             kígyó.Add(ke);
             Controls.Add(ke);
 
