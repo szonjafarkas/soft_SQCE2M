@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kígyó", "Kígyó\Kígyó.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Országok", "Országok\Országok.csproj", "{28FC2047-A1F3-4351-B8C0-35529B008FB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Országok2", "Országok2\Országok2.csproj", "{B3828B7F-4E97-44EC-A09A-765725F78940}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Országok2", "Országok2\Országok2.csproj", "{B3828B7F-4E97-44EC-A09A-765725F78940}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemotelDbTest", "RemotelDbTest\RemotelDbTest.csproj", "{2D7125F3-EF08-4999-99BA-FC61E06C73CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{B3828B7F-4E97-44EC-A09A-765725F78940}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3828B7F-4E97-44EC-A09A-765725F78940}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3828B7F-4E97-44EC-A09A-765725F78940}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D7125F3-EF08-4999-99BA-FC61E06C73CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D7125F3-EF08-4999-99BA-FC61E06C73CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D7125F3-EF08-4999-99BA-FC61E06C73CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D7125F3-EF08-4999-99BA-FC61E06C73CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

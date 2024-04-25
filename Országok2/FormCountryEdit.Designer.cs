@@ -97,12 +97,13 @@
             // 
             // button1
             // 
+            button1.BackColor = SystemColors.Control;
             button1.Location = new Point(187, 295);
             button1.Name = "button1";
             button1.Size = new Size(75, 36);
             button1.TabIndex = 6;
             button1.Text = "Ok";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             // 
             // FormCountryEdit
             // 
