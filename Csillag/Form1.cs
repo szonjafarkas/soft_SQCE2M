@@ -22,7 +22,7 @@ namespace Csillag
 
             Color c = Color.White;
             Color c2 = Color.Red;
-            Pen pen = new Pen(c2, 10);
+            Pen pen = new Pen(c2, 1);
             Brush brush = new SolidBrush(c);
 
             hajosContext context = new hajosContext();
