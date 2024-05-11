@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Memoria.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="hatterkep" Type="System.String" Scope="User">
+      <Value Profile="(Default)">memoria_kepek/bg@2x.png</Value>
+    </Setting>
+    <Setting Name="kepKonyvtar" Type="System.String" Scope="User">
+      <Value Profile="(Default)">memoria_kepek/kartyak/</Value>
+    </Setting>
+    <Setting Name="kepUtotag" Type="System.String" Scope="User">
+      <Value Profile="(Default)">@2x.png</Value>
+    </Setting>
+    <Setting Name="kepMeret" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">128</Value>
+    </Setting>
+    <Setting Name="kepTavolsag" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">132</Value>
+    </Setting>
+    <Setting Name="kartyaHatter" Type="System.String" Scope="User">
+      <Value Profile="(Default)">memoria_kepek/kartyak/card_back@2x.png</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
