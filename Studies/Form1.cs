@@ -1,3 +1,4 @@
+using System.Windows.Forms;
 using Studies.Models;
 
 namespace Studies
@@ -29,4 +30,6 @@ namespace Studies
             userControl2.Dock = DockStyle.Fill;
         }
     }
+
+   
 }

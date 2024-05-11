@@ -35,40 +35,44 @@
             // 
             // button1
             // 
-            button1.Location = new Point(14, 28);
+            button1.Location = new Point(12, 37);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(87, 57);
+            button1.Size = new Size(115, 76);
             button1.TabIndex = 0;
-            button1.Text = "button1";
+            button1.Text = "UserControl1";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
             // button2
             // 
-            button2.Location = new Point(16, 115);
+            button2.Location = new Point(12, 137);
+            button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
-            button2.Size = new Size(85, 62);
+            button2.Size = new Size(109, 83);
             button2.TabIndex = 1;
-            button2.Text = "button2";
+            button2.Text = "UserControl2";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.Location = new Point(116, 28);
+            panel1.Location = new Point(133, 37);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(554, 413);
+            panel1.Size = new Size(633, 551);
             panel1.TabIndex = 2;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(715, 506);
+            ClientSize = new Size(817, 675);
             Controls.Add(panel1);
             Controls.Add(button2);
             Controls.Add(button1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
