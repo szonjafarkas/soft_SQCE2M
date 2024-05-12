@@ -2,10 +2,12 @@ namespace Memoria
 {
     public partial class Form1 : Form
     {
-        Kartya elozoKartya;
+        //Kartya elozoKartya;
         Kartya elsoKartya = null;
         Kartya masodikKartya = null;
-        System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+        
+        
+
         public Form1()
         {
             InitializeComponent();
@@ -80,9 +82,9 @@ namespace Memoria
                 else if (masodikKartya == null )
                 {
                     masodikKartya = k;
-                    masodikKartya.Felfordit();
+                    
+                    
                    
-
 
                     // Ellenõrizzük, hogy a két kártya azonos
                     if (elsoKartya.kartyaSzam == masodikKartya.kartyaSzam)
@@ -95,10 +97,10 @@ namespace Memoria
                     }
                     else
                     {
-                        
 
-                        elsoKartya.Lefordit();
-                        masodikKartya.Lefordit();
+                        elsoKartya.timer.Start();
+                        masodikKartya.timer.Start();
+                      
                         elsoKartya = null;
                         masodikKartya = null;
                     }
