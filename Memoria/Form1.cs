@@ -17,11 +17,11 @@ namespace Memoria
 
             int sorszam = 0;
 
-            int[] t = Keveres(12);
+            int[] t = Keveres(16);
 
             for (int s = 0; s < 4; s++)
             {
-                for (int o = 0; o < 3; o++)
+                for (int o = 0; o < 4; o++)
                 {
                     Kartya k = new Kartya(s, o, t[sorszam]);
                     Controls.Add(k);
