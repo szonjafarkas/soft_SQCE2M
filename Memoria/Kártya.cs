@@ -11,7 +11,7 @@ namespace Memoria
     {
         public int kartyaSzam;
 
-        System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+        //System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
         public Kartya(int sor, int oszlop, int kartyaSzam)
         {
             this.kartyaSzam = kartyaSzam;
@@ -24,30 +24,31 @@ namespace Memoria
             //Felfordit();
             Lefordit();
             Click += Kartya_Click;
-            timer.Interval = 1000;
-            timer.Tick += Timer_Tick;
-           
+            //timer.Interval = 1000;
+            //timer.Tick += Timer_Tick;
+
 
         }
 
         private void Timer_Tick(object? sender, EventArgs e)
         {
             Lefordit();
-            timer.Stop();
+            //timer.Stop();
         }
 
         private void Kartya_Click(object? sender, EventArgs e)
         {
             Felfordit();
-            timer.Start();
+            //timer.Start();
+
         }
 
-        void Felfordit()
+        public void Felfordit()
         {
             Image = Bitmap.FromFile(Properties.Settings.Default.kepKonyvtar + kartyaSzam.ToString() + Properties.Settings.Default.kepUtotag);
         }
 
-        void Lefordit()
+        public void Lefordit()
         {
             Image = Bitmap.FromFile(Properties.Settings.Default.kartyaHatter);
         }

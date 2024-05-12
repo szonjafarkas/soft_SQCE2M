@@ -3,7 +3,9 @@ namespace Memoria
     public partial class Form1 : Form
     {
         Kartya elozoKartya;
-        
+        Kartya elsoKartya = null;
+        Kartya masodikKartya = null;
+        System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
         public Form1()
         {
             InitializeComponent();
@@ -26,7 +28,7 @@ namespace Memoria
                     Kartya k = new Kartya(s, o, t[sorszam]);
                     Controls.Add(k);
                     k.Click += K_Click;
-                    
+
                     sorszam++;
 
                 }
@@ -35,7 +37,7 @@ namespace Memoria
             int[] Keveres(int kartyaSzam)
             {
                 int[] tomb = new int[kartyaSzam];
-                for (int i = 0;i < kartyaSzam / 2; i++)
+                for (int i = 0; i < kartyaSzam / 2; i++)
                 {
                     tomb[i] = i + 1;
                     tomb[i + kartyaSzam / 2] = i + 1;
@@ -59,21 +61,58 @@ namespace Memoria
 
         private void K_Click(object? sender, EventArgs e)
         {
+            
+
             if (sender is Kartya)
             {
                 Kartya k = (Kartya)sender;
-                if (elozoKartya != null)
-                {
-                    if (k.kartyaSzam == elozoKartya.kartyaSzam && k != elozoKartya)
-                    {
-                        k.Visible = false;
-                        elozoKartya.Visible = false;
-                    }
 
+                
+                // nem ugyanaz a kártya, mint az elõzõ
+                if (elsoKartya != null && k == elsoKartya)
+                    return;
+
+                if (elsoKartya == null)
+                {
+                    elsoKartya = k;
+                    
                 }
-                elozoKartya = k;
+                else if (masodikKartya == null )
+                {
+                    masodikKartya = k;
+                    masodikKartya.Felfordit();
+                   
+
+
+                    // Ellenõrizzük, hogy a két kártya azonos
+                    if (elsoKartya.kartyaSzam == masodikKartya.kartyaSzam)
+                    {
+                        elsoKartya.Visible = false;
+                        masodikKartya.Visible = false;
+                        elsoKartya = null;
+                        masodikKartya = null;
+
+                    }
+                    else
+                    {
+                        
+
+                        elsoKartya.Lefordit();
+                        masodikKartya.Lefordit();
+                        elsoKartya = null;
+                        masodikKartya = null;
+                    }
+                    
+                }
+                
+
+
             }
+
+
         }
-            
     }
 }
+
+    
+
