@@ -41,45 +41,51 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(322, 10);
+            label1.BackColor = SystemColors.Control;
+            label1.Font = new Font("Showcard Gothic", 12F, FontStyle.Italic, GraphicsUnit.Point);
+            label1.Location = new Point(241, 10);
             label1.Name = "label1";
-            label1.Size = new Size(169, 20);
+            label1.Size = new Size(281, 26);
             label1.TabIndex = 2;
             label1.Text = "jó próbálkozások száma";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(322, 54);
+            label2.Font = new Font("Showcard Gothic", 12F, FontStyle.Italic, GraphicsUnit.Point);
+            label2.Location = new Point(203, 48);
             label2.Name = "label2";
-            label2.Size = new Size(189, 20);
+            label2.Size = new Size(319, 26);
             label2.TabIndex = 3;
             label2.Text = "rossz probálkozások száma";
             // 
             // label3
             // 
             label3.AutoSize = true;
+            label3.Font = new Font("Showcard Gothic", 12F, FontStyle.Italic, GraphicsUnit.Point);
             label3.Location = new Point(528, 10);
             label3.Name = "label3";
-            label3.Size = new Size(50, 20);
+            label3.Size = new Size(80, 26);
             label3.TabIndex = 4;
             label3.Text = "label3";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(528, 54);
+            label4.Font = new Font("Showcard Gothic", 12F, FontStyle.Italic, GraphicsUnit.Point);
+            label4.Location = new Point(528, 48);
             label4.Name = "label4";
-            label4.Size = new Size(50, 20);
+            label4.Size = new Size(81, 26);
             label4.TabIndex = 5;
             label4.Text = "label4";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(24, 30);
+            label5.Font = new Font("Showcard Gothic", 12F, FontStyle.Italic, GraphicsUnit.Point);
+            label5.Location = new Point(54, 30);
             label5.Name = "label5";
-            label5.Size = new Size(0, 20);
+            label5.Size = new Size(0, 26);
             label5.TabIndex = 6;
             // 
             // timer1
@@ -91,9 +97,10 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(249, 206);
+            label6.Font = new Font("Showcard Gothic", 12F, FontStyle.Italic, GraphicsUnit.Point);
+            label6.Location = new Point(90, 273);
             label6.Name = "label6";
-            label6.Size = new Size(0, 20);
+            label6.Size = new Size(0, 26);
             label6.TabIndex = 7;
             // 
             // Form1

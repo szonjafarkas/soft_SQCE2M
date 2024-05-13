@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="memoria_kepek\bg%402x.png">
+    <None Update="memoria_kepek\bg@2x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="memoria_kepek\game_over%402x.png">

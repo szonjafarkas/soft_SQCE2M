@@ -23,6 +23,12 @@ namespace Memoria
             Height = BackgroundImage.Height;
             label3.Text = talalt.ToString();
             label4.Text = nem_talalt.ToString();
+            label1.BackColor = System.Drawing.Color.Transparent;
+            label2.BackColor = System.Drawing.Color.Transparent;
+            label3.BackColor = System.Drawing.Color.Transparent;
+            label4.BackColor = System.Drawing.Color.Transparent;
+            label5.BackColor = System.Drawing.Color.Transparent;
+            label6.BackColor = System.Drawing.Color.Transparent;
 
             int sorszam = 0;
 
