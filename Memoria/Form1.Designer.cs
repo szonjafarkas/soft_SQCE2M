@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
+            label5 = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // label1
@@ -70,11 +73,26 @@
             label4.TabIndex = 5;
             label4.Text = "label4";
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(24, 30);
+            label5.Name = "label5";
+            label5.Size = new Size(0, 20);
+            label5.TabIndex = 6;
+            // 
+            // timer1
+            // 
+            timer1.Enabled = true;
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -92,5 +110,7 @@
         private Label label2;
         private Label label3;
         private Label label4;
+        private Label label5;
+        private System.Windows.Forms.Timer timer1;
     }
 }

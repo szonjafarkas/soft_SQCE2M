@@ -9,7 +9,7 @@ namespace Memoria
         Kartya masodikKartya = null;
         int talalt = 0;
         int nem_talalt = 0;
-        
+
 
         public Form1()
         {
@@ -23,7 +23,7 @@ namespace Memoria
             Height = BackgroundImage.Height;
             label3.Text = talalt.ToString();
             label4.Text = nem_talalt.ToString();
-            
+
             int sorszam = 0;
 
             int[] t = Keveres(16);
@@ -133,8 +133,14 @@ namespace Memoria
 
 
         }
-
+        int seconds = 0;
         
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            seconds++;
+            label5.Text = seconds.ToString();
+        }
     }
 }
 
