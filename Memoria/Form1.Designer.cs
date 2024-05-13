@@ -121,7 +121,7 @@
             button1.Name = "button1";
             button1.Size = new Size(219, 43);
             button1.TabIndex = 8;
-            button1.Text = "Könnyű";
+            button1.Text = "Könnyű (2x4)";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
@@ -133,7 +133,7 @@
             button2.Name = "button2";
             button2.Size = new Size(219, 43);
             button2.TabIndex = 9;
-            button2.Text = "Közepes";
+            button2.Text = "Közepes (4x4)";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
@@ -145,7 +145,7 @@
             button3.Name = "button3";
             button3.Size = new Size(219, 43);
             button3.TabIndex = 10;
-            button3.Text = "Nehéz";
+            button3.Text = "Nehéz (5x4)";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
