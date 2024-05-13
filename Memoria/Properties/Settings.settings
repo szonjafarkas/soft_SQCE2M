@@ -15,7 +15,7 @@
       <Value Profile="(Default)">128</Value>
     </Setting>
     <Setting Name="kepTavolsag" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">132</Value>
+      <Value Profile="(Default)">20</Value>
     </Setting>
     <Setting Name="kartyaHatter" Type="System.String" Scope="User">
       <Value Profile="(Default)">memoria_kepek/kartyak/card_back@2x.png</Value>

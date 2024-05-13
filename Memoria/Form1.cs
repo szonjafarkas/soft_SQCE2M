@@ -1,3 +1,5 @@
+using System.Windows.Forms;
+
 namespace Memoria
 {
     public partial class Form1 : Form
@@ -5,7 +7,8 @@ namespace Memoria
         //Kartya elozoKartya;
         Kartya elsoKartya = null;
         Kartya masodikKartya = null;
-        
+        int talalt = 0;
+        int nem_talalt = 0;
         
 
         public Form1()
@@ -18,7 +21,9 @@ namespace Memoria
             BackgroundImage = Bitmap.FromFile(Properties.Settings.Default.hatterkep);
             Width = BackgroundImage.Width;
             Height = BackgroundImage.Height;
-
+            label3.Text = talalt.ToString();
+            label4.Text = nem_talalt.ToString();
+            
             int sorszam = 0;
 
             int[] t = Keveres(16);
@@ -29,11 +34,14 @@ namespace Memoria
                 {
                     Kartya k = new Kartya(s, o, t[sorszam]);
                     Controls.Add(k);
+                    k.Left = Width / 2 - ((2 - o) * Properties.Settings.Default.kepMeret + (2 - o) * Properties.Settings.Default.kepTavolsag);
+                    k.Top = Height / 2 - ((2 - s) * Properties.Settings.Default.kepMeret + (2 - s) * Properties.Settings.Default.kepTavolsag);
                     k.Click += K_Click;
 
                     sorszam++;
 
                 }
+
             }
 
             int[] Keveres(int kartyaSzam)
@@ -41,6 +49,7 @@ namespace Memoria
                 int[] tomb = new int[kartyaSzam];
                 for (int i = 0; i < kartyaSzam / 2; i++)
                 {
+
                     tomb[i] = i + 1;
                     tomb[i + kartyaSzam / 2] = i + 1;
                 }
@@ -63,13 +72,14 @@ namespace Memoria
 
         private void K_Click(object? sender, EventArgs e)
         {
-            
+
 
             if (sender is Kartya)
             {
                 Kartya k = (Kartya)sender;
 
-                
+
+
                 // nem ugyanaz a kártya, mint az elõzõ
                 if (elsoKartya != null && k == elsoKartya)
                     return;
@@ -77,14 +87,16 @@ namespace Memoria
                 if (elsoKartya == null)
                 {
                     elsoKartya = k;
-                    
+
+
                 }
-                else if (masodikKartya == null )
+                else if (masodikKartya == null)
                 {
                     masodikKartya = k;
-                    
-                    
-                   
+
+
+
+
 
                     // Ellenõrizzük, hogy a két kártya azonos
                     if (elsoKartya.kartyaSzam == masodikKartya.kartyaSzam)
@@ -93,28 +105,38 @@ namespace Memoria
                         masodikKartya.Visible = false;
                         elsoKartya = null;
                         masodikKartya = null;
+                        talalt++;
+                        label3.Text = talalt.ToString();
+
 
                     }
                     else
                     {
-
                         elsoKartya.timer.Start();
                         masodikKartya.timer.Start();
-                      
+
                         elsoKartya = null;
                         masodikKartya = null;
+                        nem_talalt++;
+                        label4.Text = nem_talalt.ToString();
                     }
-                    
+
+
+
                 }
-                
+
+
+
 
 
             }
 
 
         }
+
+        
     }
 }
 
-    
+
 

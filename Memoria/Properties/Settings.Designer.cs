@@ -73,7 +73,7 @@ namespace Memoria.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("132")]
+        [global::System.Configuration.DefaultSettingValueAttribute("20")]
         public int kepTavolsag {
             get {
                 return ((int)(this["kepTavolsag"]));
