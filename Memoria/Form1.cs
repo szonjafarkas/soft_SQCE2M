@@ -107,6 +107,11 @@ namespace Memoria
                         masodikKartya = null;
                         talalt++;
                         label3.Text = talalt.ToString();
+                        if (talalt == 8)
+                        {
+                            timer1.Stop();
+                            label6.Text = "Gratulálok, megtaláltad az összes párt!";
+                        }
 
 
                     }
