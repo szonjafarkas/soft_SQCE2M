@@ -1,4 +1,7 @@
+using System.ComponentModel.DataAnnotations;
 using System.Windows.Forms;
+using static System.Formats.Asn1.AsnWriter;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace Memoria
 {
@@ -7,9 +10,11 @@ namespace Memoria
         //Kartya elozoKartya;
         Kartya elsoKartya = null;
         Kartya masodikKartya = null;
+        //HashSet<Kartya> cards;
         int talalt = 0;
         int nem_talalt = 0;
         int nehezseg;
+        int seconds = 0;
 
         public Form1()
         {
@@ -30,13 +35,55 @@ namespace Memoria
             label5.BackColor = System.Drawing.Color.Transparent;
             label6.BackColor = System.Drawing.Color.Transparent;
             label7.BackColor = System.Drawing.Color.Transparent;
-
-
-
+            pictureBox1.Visible = false;
+            pictureBox1.Image = Bitmap.FromFile(Properties.Settings.Default.grat);
         }
 
         private void K_Click(object? sender, EventArgs e)
         {
+            //if (sender is Kartya)
+            //{
+            //    Kartya k = (Kartya)sender;
+
+
+
+            //    if (cards.Count() == 2)
+            //    {
+            //        foreach (Kartya kartya in cards)
+            //        {
+
+            //            kartya.timer.Start();
+
+
+            //        }
+
+            //        nem_talalt++;
+
+            //    }
+            //    cards.Add(k);
+
+            //    if (cards.Count() != 2)
+            //    {
+            //        return;
+            //    }
+
+            //    int cardNum = cards.Get().kartyaSzam;
+            //    foreach (Kartya card in cards)
+            //    {
+            //        if (cardNum != card.kartyaSzam)
+            //        {
+            //            return;
+            //        }
+            //    }
+            //    cards.Clear();
+            //    talalt++;
+            //    label4.Text = talalt.ToString();
+            //    if (talalt == nehezseg)
+            //    {
+            //        timer1.Stop();
+            //        label7.Text = "Sosz gec";
+            //        pictureBox1.Visible = true;
+            //    }
 
 
             if (sender is Kartya)
@@ -45,25 +92,18 @@ namespace Memoria
 
 
 
-                // nem ugyanaz a kártya, mint az elõzõ
+                // nem ugyanaz a kártya, mint az el?z?
                 if (elsoKartya != null && k == elsoKartya)
                     return;
-
                 if (elsoKartya == null)
                 {
                     elsoKartya = k;
-
-
                 }
                 else if (masodikKartya == null)
                 {
                     masodikKartya = k;
 
-
-
-
-
-                    // Ellenõrizzük, hogy a két kártya azonos
+                    // Ellen?rizzük, hogy a két kártya azonos
                     if (elsoKartya.kartyaSzam == masodikKartya.kartyaSzam)
                     {
                         elsoKartya.Visible = false;
@@ -76,9 +116,8 @@ namespace Memoria
                         {
                             timer1.Stop();
                             label6.Text = "Gratulálok, megtaláltad az összes párt!";
+                            pictureBox1.Visible = true;
                         }
-
-
                     }
                     else
                     {
@@ -94,24 +133,61 @@ namespace Memoria
 
 
                 }
-
-
-
-
-
             }
-
-
         }
-        int seconds = 0;
-
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             seconds++;
             label5.Text = seconds.ToString();
         }
+        int[] Keveres(int kartyaSzam)
+        {
+            //int[] tomb = new int[kartyaSzam];
+            //for (int i = 0; i < kartyaSzam / 2; i++)
+            //{
 
+            //    tomb[i] = i + 1;
+            //    tomb[i + kartyaSzam / 2] = i + 1;
+            //}
+            HashSet<int> szamok = new HashSet<int>();
+            Random random = new Random();
+            while (szamok.Count < 50)
+            {
+                int number = random.Next(1,51);
+                szamok.Add(number);
+            }
+            int[] tomb1 = new int[51];
+
+            int s = 0;
+            foreach (int i in szamok)
+            {
+               
+                tomb1[s] =i;
+                s++;
+            }
+            int[] tomb = new int[kartyaSzam];
+            for (int i = 0; i < kartyaSzam / 2; i++)
+            {
+
+                tomb[i] = tomb1[i];
+                tomb[i + kartyaSzam / 2] = tomb1[i];
+            }
+
+            Random rnd = new Random();
+
+            for (int i = 0; i < kartyaSzam; i++)
+            {
+                int egyik = rnd.Next(kartyaSzam);
+                int masik = rnd.Next(kartyaSzam);
+
+                int koztes = tomb[egyik];
+                tomb[egyik] = tomb[masik];
+                tomb[masik] = koztes;
+            }
+
+            return tomb;
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             int sorszam = 0;
@@ -137,37 +213,9 @@ namespace Memoria
                     k.Click += K_Click;
 
                     sorszam++;
-
                 }
-
-            }
-            int[] Keveres(int kartyaSzam)
-            {
-                int[] tomb = new int[kartyaSzam];
-                for (int i = 0; i < kartyaSzam / 2; i++)
-                {
-
-                    tomb[i] = i + 1;
-                    tomb[i + kartyaSzam / 2] = i + 1;
-                }
-
-                Random rnd = new Random();
-
-                for (int i = 0; i < kartyaSzam; i++)
-                {
-                    int egyik = rnd.Next(kartyaSzam);
-                    int masik = rnd.Next(kartyaSzam);
-
-                    int koztes = tomb[egyik];
-                    tomb[egyik] = tomb[masik];
-                    tomb[masik] = koztes;
-                }
-
-                return tomb;
-            }
-
+            }          
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             int sorszam = 0;
@@ -191,36 +239,9 @@ namespace Memoria
                     k.Click += K_Click;
 
                     sorszam++;
-
                 }
-
-            }
-            int[] Keveres(int kartyaSzam)
-            {
-                int[] tomb = new int[kartyaSzam];
-                for (int i = 0; i < kartyaSzam / 2; i++)
-                {
-
-                    tomb[i] = i + 1;
-                    tomb[i + kartyaSzam / 2] = i + 1;
-                }
-
-                Random rnd = new Random();
-
-                for (int i = 0; i < kartyaSzam; i++)
-                {
-                    int egyik = rnd.Next(kartyaSzam);
-                    int masik = rnd.Next(kartyaSzam);
-
-                    int koztes = tomb[egyik];
-                    tomb[egyik] = tomb[masik];
-                    tomb[masik] = koztes;
-                }
-
-                return tomb;
-            }
+            }           
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             int sorszam = 0;
@@ -245,34 +266,8 @@ namespace Memoria
                     k.Click += K_Click;
 
                     sorszam++;
-
                 }
-
-            }
-            int[] Keveres(int kartyaSzam)
-            {
-                int[] tomb = new int[kartyaSzam];
-                for (int i = 0; i < kartyaSzam / 2; i++)
-                {
-
-                    tomb[i] = i + 1;
-                    tomb[i + kartyaSzam / 2] = i + 1;
-                }
-
-                Random rnd = new Random();
-
-                for (int i = 0; i < kartyaSzam; i++)
-                {
-                    int egyik = rnd.Next(kartyaSzam);
-                    int masik = rnd.Next(kartyaSzam);
-
-                    int koztes = tomb[egyik];
-                    tomb[egyik] = tomb[masik];
-                    tomb[masik] = koztes;
-                }
-
-                return tomb;
-            }
+            }           
         }
     }
 }

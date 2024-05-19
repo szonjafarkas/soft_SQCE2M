@@ -40,6 +40,8 @@
             button2 = new Button();
             button3 = new Button();
             label7 = new Label();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -106,7 +108,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Showcard Gothic", 12F, FontStyle.Italic, GraphicsUnit.Point);
-            label6.Location = new Point(97, 355);
+            label6.Location = new Point(97, 314);
             label6.Margin = new Padding(5, 0, 5, 0);
             label6.Name = "label6";
             label6.Size = new Size(0, 26);
@@ -160,11 +162,20 @@
             label7.TabIndex = 11;
             label7.Text = "Válassz nehézségi szintet!";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(160, 364);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(320, 320);
+            pictureBox1.TabIndex = 12;
+            pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(13F, 26F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1300, 585);
+            ClientSize = new Size(1300, 601);
+            Controls.Add(pictureBox1);
             Controls.Add(label7);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -181,6 +192,7 @@
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -197,5 +209,6 @@
         private Button button2;
         private Button button3;
         private Label label7;
+        private PictureBox pictureBox1;
     }
 }

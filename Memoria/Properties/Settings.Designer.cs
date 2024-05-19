@@ -94,5 +94,17 @@ namespace Memoria.Properties {
                 this["kartyaHatter"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("memoria_kepek/congrats@2x.png")]
+        public string grat {
+            get {
+                return ((string)(this["grat"]));
+            }
+            set {
+                this["grat"] = value;
+            }
+        }
     }
 }
