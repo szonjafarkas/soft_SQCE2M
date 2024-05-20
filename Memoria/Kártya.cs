@@ -28,7 +28,7 @@ namespace Memoria
             //Felfordit();
             Lefordit();
             Click += Kartya_Click;
-            timer.Interval = 1000;
+            timer.Interval =500;
             timer.Tick += Timer_Tick;
 
 

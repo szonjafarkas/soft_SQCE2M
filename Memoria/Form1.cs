@@ -7,15 +7,11 @@ namespace Memoria
 {
     public partial class Form1 : Form
     {
-        //Kartya elozoKartya;
-        Kartya elsoKartya = null;
-        Kartya masodikKartya = null;
-        //HashSet<Kartya> cards;
+        HashSet<Kartya> cards = new HashSet<Kartya>();
         int talalt = 0;
         int nem_talalt = 0;
         int nehezseg;
         int seconds = 0;
-
         public Form1()
         {
             InitializeComponent();
@@ -26,8 +22,14 @@ namespace Memoria
             BackgroundImage = Bitmap.FromFile(Properties.Settings.Default.hatterkep);
             Width = BackgroundImage.Width;
             Height = BackgroundImage.Height;
-            label3.Text = talalt.ToString();
-            label4.Text = nem_talalt.ToString();
+            label1.Visible = false;
+            label2.Visible = false;
+            label3.Visible = false;
+            label4.Visible = false;
+            label8.Visible = false;
+            label9.Visible = false;
+            label10.Visible = false;
+            label11.Visible = false;
             label1.BackColor = System.Drawing.Color.Transparent;
             label2.BackColor = System.Drawing.Color.Transparent;
             label3.BackColor = System.Drawing.Color.Transparent;
@@ -35,106 +37,82 @@ namespace Memoria
             label5.BackColor = System.Drawing.Color.Transparent;
             label6.BackColor = System.Drawing.Color.Transparent;
             label7.BackColor = System.Drawing.Color.Transparent;
+            label8.BackColor = System.Drawing.Color.Transparent;
+            label9.BackColor = System.Drawing.Color.Transparent;
+            label10.BackColor = System.Drawing.Color.Transparent;
+            label11.BackColor = System.Drawing.Color.Transparent;
             pictureBox1.Visible = false;
             pictureBox1.Image = Bitmap.FromFile(Properties.Settings.Default.grat);
+            
         }
 
         private void K_Click(object? sender, EventArgs e)
         {
-            //if (sender is Kartya)
-            //{
-            //    Kartya k = (Kartya)sender;
-
-
-
-            //    if (cards.Count() == 2)
-            //    {
-            //        foreach (Kartya kartya in cards)
-            //        {
-
-            //            kartya.timer.Start();
-
-
-            //        }
-
-            //        nem_talalt++;
-
-            //    }
-            //    cards.Add(k);
-
-            //    if (cards.Count() != 2)
-            //    {
-            //        return;
-            //    }
-
-            //    int cardNum = cards.Get().kartyaSzam;
-            //    foreach (Kartya card in cards)
-            //    {
-            //        if (cardNum != card.kartyaSzam)
-            //        {
-            //            return;
-            //        }
-            //    }
-            //    cards.Clear();
-            //    talalt++;
-            //    label4.Text = talalt.ToString();
-            //    if (talalt == nehezseg)
-            //    {
-            //        timer1.Stop();
-            //        label7.Text = "Sosz gec";
-            //        pictureBox1.Visible = true;
-            //    }
-
-
             if (sender is Kartya)
             {
                 Kartya k = (Kartya)sender;
-
-
-
-                // nem ugyanaz a kártya, mint az el?z?
-                if (elsoKartya != null && k == elsoKartya)
-                    return;
-                if (elsoKartya == null)
+                if (cards.Count() == 2)
                 {
-                    elsoKartya = k;
+                    foreach (Kartya kartya in cards)
+                    {
+                        kartya.timer.Start();
+
+                    }
+                    cards.Clear();
+                   
                 }
-                else if (masodikKartya == null)
+                cards.Add(k);
+               
+                if (cards.Count() != 2)
                 {
-                    masodikKartya = k;
-
-                    // Ellen?rizzük, hogy a két kártya azonos
-                    if (elsoKartya.kartyaSzam == masodikKartya.kartyaSzam)
+                   
+                    return;
+                }         
+                foreach (Kartya card in cards)
+                {
+                    if (k.kartyaSzam != card.kartyaSzam)
                     {
-                        elsoKartya.Visible = false;
-                        masodikKartya.Visible = false;
-                        elsoKartya = null;
-                        masodikKartya = null;
-                        talalt++;
-                        label3.Text = talalt.ToString();
-                        if (talalt == nehezseg)
-                        {
-                            timer1.Stop();
-                            label6.Text = "Gratulálok, megtaláltad az összes párt!";
-                            pictureBox1.Visible = true;
-                        }
-                    }
-                    else
-                    {
-                        elsoKartya.timer.Start();
-                        masodikKartya.timer.Start();
-
-                        elsoKartya = null;
-                        masodikKartya = null;
                         nem_talalt++;
-                        label4.Text = nem_talalt.ToString();
+                        return;                      
                     }
+                    
+                    if (k.kartyaSzam == card.kartyaSzam)
+                    {
+                        card.Visible = false;
+                        k.Visible = false;
+                        talalt++ ;
+                        
+                    }
+                    
+                }
+                cards.Clear();
+                int jo_probalkozasok = talalt / 2;
+                label4.Text = nem_talalt.ToString();
+                label3.Text = jo_probalkozasok.ToString();
 
 
-
+                if (jo_probalkozasok == nehezseg)
+                {
+                    timer1.Stop();
+                    label6.Text = "Gratulálok, megtaláltad az összes párt!";
+                    pictureBox1.Visible = true;
+                    label1.Visible = true;
+                    label2.Visible = true;
+                    label3.Visible = true;
+                    label4.Visible = true;
+                    int ossz = nem_talalt + jo_probalkozasok;
+                    decimal arany_j = ((decimal)jo_probalkozasok / (decimal)ossz) * 100;
+                    decimal arany_r = ((decimal)nem_talalt /(decimal)ossz) * 100 ;
+                    label9.Text = ($"{Math.Round(arany_j,2)} %");
+                    label11.Text = ($"{Math.Round(arany_r,2)} %");
+                    label8.Visible = true;
+                    label9.Visible = true;
+                    label10.Visible = true;
+                    label11.Visible = true;
                 }
             }
         }
+    
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -143,13 +121,6 @@ namespace Memoria
         }
         int[] Keveres(int kartyaSzam)
         {
-            //int[] tomb = new int[kartyaSzam];
-            //for (int i = 0; i < kartyaSzam / 2; i++)
-            //{
-
-            //    tomb[i] = i + 1;
-            //    tomb[i + kartyaSzam / 2] = i + 1;
-            //}
             HashSet<int> szamok = new HashSet<int>();
             Random random = new Random();
             while (szamok.Count < 50)

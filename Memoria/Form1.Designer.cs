@@ -41,6 +41,10 @@
             button3 = new Button();
             label7 = new Label();
             pictureBox1 = new PictureBox();
+            label8 = new Label();
+            label9 = new Label();
+            label10 = new Label();
+            label11 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -49,7 +53,7 @@
             label1.AutoSize = true;
             label1.BackColor = SystemColors.Control;
             label1.Font = new Font("Showcard Gothic", 12F, FontStyle.Italic, GraphicsUnit.Point);
-            label1.Location = new Point(266, 13);
+            label1.Location = new Point(160, 13);
             label1.Margin = new Padding(5, 0, 5, 0);
             label1.Name = "label1";
             label1.Size = new Size(281, 26);
@@ -60,7 +64,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Showcard Gothic", 12F, FontStyle.Italic, GraphicsUnit.Point);
-            label2.Location = new Point(247, 62);
+            label2.Location = new Point(161, 111);
             label2.Margin = new Padding(5, 0, 5, 0);
             label2.Name = "label2";
             label2.Size = new Size(319, 26);
@@ -71,7 +75,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Showcard Gothic", 12F, FontStyle.Italic, GraphicsUnit.Point);
-            label3.Location = new Point(576, 13);
+            label3.Location = new Point(482, 13);
             label3.Margin = new Padding(5, 0, 5, 0);
             label3.Name = "label3";
             label3.Size = new Size(80, 26);
@@ -82,7 +86,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Showcard Gothic", 12F, FontStyle.Italic, GraphicsUnit.Point);
-            label4.Location = new Point(576, 62);
+            label4.Location = new Point(490, 111);
             label4.Margin = new Padding(5, 0, 5, 0);
             label4.Name = "label4";
             label4.Size = new Size(81, 26);
@@ -155,7 +159,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Showcard Gothic", 12F, FontStyle.Italic, GraphicsUnit.Point);
-            label7.Location = new Point(170, 207);
+            label7.Location = new Point(161, 209);
             label7.Margin = new Padding(5, 0, 5, 0);
             label7.Name = "label7";
             label7.Size = new Size(296, 26);
@@ -170,11 +174,53 @@
             pictureBox1.TabIndex = 12;
             pictureBox1.TabStop = false;
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(160, 61);
+            label8.Name = "label8";
+            label8.Size = new Size(294, 26);
+            label8.TabIndex = 13;
+            label8.Text = "Jó próbálkozások aránya";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(482, 61);
+            label9.Name = "label9";
+            label9.Size = new Size(81, 26);
+            label9.TabIndex = 14;
+            label9.Text = "label9";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Showcard Gothic", 12F, FontStyle.Italic, GraphicsUnit.Point);
+            label10.Location = new Point(161, 159);
+            label10.Margin = new Padding(5, 0, 5, 0);
+            label10.Name = "label10";
+            label10.Size = new Size(332, 26);
+            label10.TabIndex = 15;
+            label10.Text = "rossz probálkozások aránya";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(501, 159);
+            label11.Name = "label11";
+            label11.Size = new Size(86, 26);
+            label11.TabIndex = 16;
+            label11.Text = "label11";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(13F, 26F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1300, 601);
+            Controls.Add(label11);
+            Controls.Add(label10);
+            Controls.Add(label9);
+            Controls.Add(label8);
             Controls.Add(pictureBox1);
             Controls.Add(label7);
             Controls.Add(button3);
@@ -210,5 +256,9 @@
         private Button button3;
         private Label label7;
         private PictureBox pictureBox1;
+        private Label label8;
+        private Label label9;
+        private Label label10;
+        private Label label11;
     }
 }
